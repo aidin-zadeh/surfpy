@@ -20,23 +20,21 @@ The current implementation implements the following objectives:
 ## Directory Structure
 ```
 .
-├── docs    <- Documents related to this project.
-├── images  <- Images for README.md files.
-├── notebooks   <- Ipythoon Notebook files
-├── reports <- Generated analysis as HTML, PDF, Latex, etc.
-│   ├── figures <- Generated graphics and figures used in reporting.
-│   └── logs    <- Generated log files.  
-└── surfpy  <- source files used in this project.
+├── docs                <- Documents related to this project.
+├── images              <- Images for README.md files.
+├── notebooks           <- Ipythoon Notebook files
+├── reports             <- Generated analysis as HTML, PDF, Latex, etc.
+│   ├── figures         <- Generated graphics and figures used in reporting.
+│   └── logs            <- Generated log files.  
+└── surfpy
     ├── conf
-    ├── data    <- data utilized in this project.
+    ├── data            <- data utilized in this project.
     │   ├── ext
     │   ├── int
     │   └── raw
-    ├── __pycache__
-    ├── src
-    │   └── __pycache__
-    ├── static
-    └── templates 
+    ├── src             <- Source files used in this project.
+    ├── static          <- CSS files.
+    └── templates       <- Flask templates 
 ```
 ## Installation
 Install python dependencies from  `requirements.txt` using conda.

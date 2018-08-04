@@ -1,10 +1,11 @@
-# surfpy
-
-## Background
-
-## Methodology
+# Hawaii Climate
+This repository contains a Python project that implements a Flask API that retrieve climate information from Hawaii area that helps to perform climate analysis.
+The current implementation implements the following objectives:
+- USe Python and SQLAlchemy to perform basic climate analysis and data exploration of a climate database.
+- Implement a Flask API to retrieve the climate observations and the daily normals for a give time range. 
 
 ## Data
+[H]
 
 ## Report
 
@@ -17,8 +18,25 @@
 - sqlalchemy 1.2.8 
  
 ## Directory Structure
-```bash
-          
+```
+.
+├── docs    <- Documents related to this project.
+├── images  <- Images for README.md files.
+├── notebooks   <- Ipythoon Notebook files
+├── reports <- Generated analysis as HTML, PDF, Latex, etc.
+│   ├── figures <- Generated graphics and figures used in reporting.
+│   └── logs    <- Generated log files.  
+└── surfpy  <- source files used in this project.
+    ├── conf
+    ├── data    <- data utilized in this project.
+    │   ├── ext
+    │   ├── int
+    │   └── raw
+    ├── __pycache__
+    ├── src
+    │   └── __pycache__
+    ├── static
+    └── templates 
 ```
 ## Installation
 Install python dependencies from  `requirements.txt` using conda.
@@ -31,10 +49,13 @@ Or create a new conda environment `<new-env-name>` by importing a copy of a work
 conda env create --name <new-env-name> -f surfpy.yml
 ```
 ## Usage
+```bash
+python run.py
 
+```
 ## References
 
 ## To Do
-- [ ] TBA
 
-## License 
+## License
+MIT Licensei 

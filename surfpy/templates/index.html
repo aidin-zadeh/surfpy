@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="HawaiiClimate" content>
+    <meta name="Aidin Hassanzadeh" content>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
+          integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+          crossorigin="anonymous">
+    <!-- custom style for this template -->
+    <link href="../static/style.css" type="text/css" rel="stylesheet">
+    <!--<link href="jumbtron.css" rel="stylesheet">-->
+    <title>Weather Board</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="index.html">HawaiiClimate</a>
+    <button class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault"
+            aria-expanded="true"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+</nav>
+
+<main role="main">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-4">Hawaii Climate API</h1>
+            <p>HawwaiClimate Flask APP allows you access basic information that help to do climate analysis on Hawaii area.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="container-header">Requests</h1>
+                    <h2 class="request-header">Climate observations</h2>
+                    Returns the date and the climate observations form the last year.
+                    All calls for the observations are in this format:
+                    <br>
+                    <code class="text-muted">http://127.0.0.1:5000/api/v1.0/[components]</code>
+
+                    <h3 class="request-title">Components</h3>
+                    <p>Components of the url describe what type of data you would like. They are separated by forward slashes.</p>
+                <table class="table-bordered">
+                    <thead>
+                    <tr class="fields">
+                        <td class="fieldname" style="width: 20.0%">Name</td>
+                        <td class="fielddesicription" style="width: 40.0%">Description</td>
+                        <td class="fieldsample" style="width: 40.0%">Sample Values</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="required">
+                        <td style="width: 20.0%">Climates observations*</td>
+                        <td style="width: 40.0%">Return the dates and the climate observations of the last year.</td>
+                        <td style="width: 40.0%">Valid values: "pobs", "tobs"
+                        </td>
+                    </tr>
+                    <tr class="required">
+                        <td style="width: 20.0%">Weather stations*</td>
+                        <td style="width: 40.0%">Return the weather stations of the dataset.</td>
+                        <td style="width: 40.0%">stations</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="footnote">*required</div>
+
+                <h4 class="request-title"> Examples of usage </h4>
+                <code class="text-muted">/api/v1.0/pobs</code>
+                <br>
+                Returns the dates and  the last year temperature observations.
+
+                <!--<h4 class="request-title">Sample Response</h4>-->
+                <!--<textarea cols="" rows="" readonly="readonly" wrap="off" class="sampleTextArea">-->
+                <!--</textarea>-->
+
+                <div class="container-header">
+                    <h2 class="request-header">Daily Normals</h2>
+                    Return a JSON list of the minimum, the average, and the maximum (normals) of climatic observations for a given start or start-end range.
+                    When given the start only, return normals calculated for the observations since the start date.
+                    When given the start date and the end date, return normals calculated for the observations between the start date and end date inclusive.
+                    All calls for the observations are in this format:
+                    <br>
+                    <code class="text-muted">/api/v1.0/normals/[components]/[start]/[end]</code>
+                    <h3 class="request-title">Components</h3>
+                    <p>Components of the url describe what type of data you would like. They are separated by forward slashes.</p>
+                    <table class="table-bordered">
+                        <thead>
+                        <tr class="fields">
+                            <td class="fieldname" style="width: 20.0%">Name</td>
+                            <td class="fielddesicription" style="width: 40.0%">Description</td>
+                            <td class="fieldsample" style="width: 40.0%">Sample Values</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="required">
+                            <td style="width: 20.0%">Climates observations*</td>
+                            <td style="width: 40.0%">Return the daily normals gor given `start` and `end` range.</td>
+                            <td style="width: 40.0%">Valid values: "pobs", "tobs".
+                                <br>Valid `start` and `end` formats: "yyyy-mm-dd"/
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="footnote">*required</div>
+
+                    <h4 class="request-title"> Examples of usage </h4>
+                    <code class="text-muted">/api/v1.0/normals/tobs/2016-10-01</code>
+                    <br>
+                    Returns the normals for temperature observations since 2016-10-01.
+                    <br>
+                    <code class="text-muted">/api/v1.0/normals/tobs/2016-10-01/2017-12-05</code>
+                    <br>
+                    Returns the normals for temperature observations collected between 2016-10-01 and 2016-12-05 inclusive.
+                    <!--<h4 class="request-title">Sample Response</h4>-->
+                    <!--<textarea cols="" rows="" readonly="readonly" wrap="off" class="sampleTextArea">-->
+                    <!--</textarea>-->
+                </div>
+            </div>
+        </div>
+        </div> <!-- /container -->
+    </div>
+
+</main>
+
+<footer class="container">
+    <p>By Aidin Hassanzadeh July-2018</p>
+</footer>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous">
+
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous">
+
+</script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"
+        integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        crossorigin="anonymous">
+
+</script>
+
+</body>
+</html>

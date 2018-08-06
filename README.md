@@ -15,7 +15,7 @@ The current implementation implements the following objectives:
 - nb_conda 2.2.1
 - matplotlib 2.2.2
 - sqlalchemy 1.2.8 
- 
+- flask 1.0.2 
 ## Directory Structure
 ```
 .
